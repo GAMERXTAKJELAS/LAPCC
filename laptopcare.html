@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Care - Laptop Companion</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="laptopcare.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body class="laptop-care-page">
+
+    <!-- SIDEBAR (PC) -->
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item active">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item">
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="page-wrapper">
+        <header class="header-tab">
+            <h1>LAPTOP COMPANION</h1>
+            <h2 class="sub-label">LAPTOP CARE</h2>
+        </header>
+
+        <main class="content-area">
+            <!-- VIDEO TUTORIALS SECTION -->
+            <section class="video-section">
+                <div class="section-banner">VIDEO TUTORIALS</div>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/1.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 01</h3><p>Maintenance Guide</p></div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/2.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 02</h3><p>Maintenance Guide</p></div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/3.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 03</h3><p>Maintenance Guide</p></div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/4.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 04</h3><p>Maintenance Guide</p></div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/8.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 08</h3><p>Maintenance Guide</p></div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video controls preload="none"><source src="video/9.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="video-info"><h3>Tutorial 09</h3><p>Maintenance Guide</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORIGINAL RECOMMENDED TIPS SECTION -->
+            <div class="section-banner">RECOMMENDED TIPS</div>
+            <div class="care-container" id="tips-list">
+                <!-- Reverted back to your original empty state logic -->
+                <p id="empty-msg" style="text-align:center; padding:40px; opacity:0.5;">
+                    No maintenance tips available yet. Check back soon!
+                </p>
+            </div>
+        </main>
+
+        <!-- BOTTOM NAV (MOBILE) -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="laptopcare.html" class="nav-btn">
+                    <div class="home-circle"><span class="icon-black">💡</span></div>
+                </a>
+                <a href="homepage.html" class="nav-btn"><span class="icon-black">🏠</span></a>
+                <a href="profile.html" class="nav-btn"><span class="icon-black">👤</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="laptopcare.js"></script>
+</body>
+</html>

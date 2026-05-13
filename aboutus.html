@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Laptop Companion</title>
+    <link rel="stylesheet" href="aboutus.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="dark-mode">
+
+    <div class="app-shell">
+        <header class="about-header">
+            <!-- Back button stays to allow navigation back to profile -->
+            <a href="profile.html" class="back-link">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#169434" stroke-width="3">
+                    <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <h1 class="page-title">ABOUT US</h1>
+            <div style="width:40px;"></div>
+        </header>
+
+        <main class="about-content">
+            <div class="profile-container">
+                <div class="main-photo">
+                    <img src="/image/Mehd.jpg" alt="Muhammad Syamsul Nazir">
+                </div>
+                
+                <div class="name-display-area">
+                    <h2 class="display-name" id="user-name">Syamsul Nazir</h2>
+                    <p class="role-tag">Developer & Founder</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3 style="color: var(--clr-primary-a0); margin-bottom: 10px;">The Developer</h3>
+                <p>Hello! I am Syamsul Nazir. This project was developed during my diploma in Computer Technology (Big Data). My goal is to make laptop maintenance education simple and interactive for all students through the <strong>Laptop Companion</strong> app.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const fullName = "MUHAMMAD SYAMSUL NAZIR BIN MOHD SAMSURI";
+            const shortName = "Syamsul Nazir";
+
+            $('#user-name').hover(
+                function() { 
+                    $(this).text(fullName).css('font-size', '1rem'); 
+                },
+                function() { 
+                    $(this).text(shortName).css('font-size', '1.8rem'); 
+                }
+            );
+        });
+    </script>
+</body>
+</html>

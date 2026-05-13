@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Laptop Companion</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body class="home-page-body">
+
+    <!-- SIDEBAR (PC) -->
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item active">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item">
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="page-wrapper">
+        <header class="header-tab">
+            <h1>LAPTOP COMPANION</h1>
+            <h2 class="sub-label">HARDWARE NEWS</h2>
+        </header>
+
+        <main class="content-area">
+            <!-- Search and Quicksolve Row -->
+            <div class="action-row">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="home-search" placeholder="Search hardware...">
+                </div>
+                <a href="quicksolve.html" class="btn-quicksolve">QUICKSOLVE</a>
+            </div>
+
+            <!-- News Grid -->
+            <div class="news-layout" id="news-container">
+                <!-- Data injected by JS -->
+            </div>
+
+            <!-- Synced Daily Tip (Text Only) -->
+            <div class="section-banner" style="margin-top: 40px;">DID YOU KNOW?</div>
+            <div class="care-container">
+                <div class="care-card-text-only" id="random-tip-box">
+                    <h3 id="tip-title-home">Loading tip...</h3>
+                    <p id="daily-tip-text">Syncing with admin panel...</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- BOTTOM NAV (MOBILE) -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="laptopcare.html" class="nav-btn">
+                    <span class="icon-black">💡</span>
+                </a>
+                <a href="homepage.html" class="nav-btn">
+                    <div class="home-circle">
+                        <span class="icon-black">🏠</span>
+                    </div>
+                </a>
+                <a href="profile.html" class="nav-btn">
+                    <span class="icon-black">👤</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Modal for Hardware Details -->
+    <div id="laptop-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="laptop-meta">
+                    <span class="comp-name" id="pop-name"></span>
+                </div>
+                <button class="close-btn" onclick="$('#laptop-modal').fadeOut(200)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="zoom-wrapper">
+                    <img src="" id="pop-img-main" class="magnify-image">
+                </div>
+                <section class="description-card">
+                    <p id="pop-full-desc"></p>
+                </section>
+                <div class="modal-footer">
+                    <a href="#" target="_blank" class="btn-check" id="pop-link">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="homepage.js"></script>
+</body>
+</html>

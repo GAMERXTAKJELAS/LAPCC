@@ -1,0 +1,122 @@
+/* --- ICON BASE --- */
+.icon-black {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(0) !important;
+    transition: all 0.3s ease;
+}
+
+/* --- PC SIDEBAR --- */
+.sidebar-pc {
+    display: none;
+    position: fixed;
+    left: 0; top: 0; height: 100vh;
+    width: 75px;
+    background-color: var(--clr-surface-a10);
+    border-right: 1px solid var(--clr-border);
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy expand */
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.sidebar-pc:hover { width: 210px; }
+
+.side-links { display: flex; flex-direction: column; padding: 20px 0; gap: 15px; }
+
+.side-item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 24px;
+    color: var(--clr-text);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* --- HOVER EFFECT FOR SIDEBAR --- */
+.side-item:hover:not(.active) {
+    background-color: rgba(22, 148, 52, 0.05); /* Very subtle green tint */
+    padding-left: 32px; /* Smooth slide to the right */
+}
+
+.side-item:hover .icon-black {
+    transform: scale(1.2); /* Icon pops out a bit */
+    filter: brightness(0) drop-shadow(0 0 5px var(--clr-primary-a0)) !important;
+}
+
+/* Page Highlight Logic */
+.side-item.active { 
+    background-color: var(--clr-primary-a0); 
+    color: white;
+}
+
+.side-item.active .icon-black { 
+    filter: brightness(0) invert(1) !important; 
+}
+
+.side-text {
+    margin-left: 20px;
+    opacity: 0;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidebar-pc:hover .side-text { opacity: 1; }
+
+/* --- MOBILE BOTTOM NAV --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 25px;
+    width: 92%;
+    max-width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+}
+
+.nav-container {
+    background-color: var(--clr-primary-a10);
+    height: 65px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.nav-btn {
+    background: none; border: none; cursor: pointer;
+    width: 60px; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+}
+
+.home-circle {
+    background-color: var(--clr-primary-a50);
+    width: 75px; 
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    border: 6px solid var(--clr-surface-a0);
+    margin-top: -50px;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover effect for the mobile circle too! */
+.nav-btn:hover .home-circle {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.home-circle .icon-black {
+    filter: brightness(0) !important;
+}
+
+@media (min-width: 1024px) {
+    .sidebar-pc { display: block; }
+    .bottom-nav { display: none; }
+}

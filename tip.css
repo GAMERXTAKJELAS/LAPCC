@@ -1,0 +1,86 @@
+/* Variables (Matches your system) */
+:root {
+    --clr-admin: #169434;
+    --bg-dark: #121212;
+    --bg-surface: #1e1e1e;
+    --clr-border: #333333;
+}
+
+/* Layout Grid */
+.management-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+/* Back Link */
+.back-link { text-decoration: none; color: var(--clr-admin); font-size: 0.9rem; display: block; margin-bottom: 5px; }
+
+/* Floating + Button */
+.add-tip-btn {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--clr-admin); color: white; border: none;
+    font-size: 1.8rem; cursor: pointer; transition: 0.3s;
+}
+.add-tip-btn:hover { transform: scale(1.1); background: #1db945; }
+
+/* Tip Admin Card */
+.tip-manage-box {
+    background: var(--bg-surface); padding: 15px;
+    border-radius: 20px; border: 1px solid var(--clr-border);
+    display: flex; gap: 15px; align-items: center;
+}
+
+/* Thumbnail inside management card */
+.tip-media-preview {
+    width: 60px; height: 60px; border-radius: 12px;
+    background: var(--bg-dark); overflow: hidden;
+    flex-shrink: 0; border: 1px solid var(--clr-border);
+}
+.tip-media-preview img, .tip-media-preview video {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.tip-content-info { flex-grow: 1; overflow: hidden; }
+.tip-content-info h4 { color: var(--clr-admin); margin-bottom: 3px; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tip-content-info p { font-size: 0.75rem; opacity: 0.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.tip-controls { display: flex; gap: 12px; align-items: center; }
+
+/* Toggle Switch */
+.switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #444; transition: .4s; border-radius: 20px;
+}
+input:checked + .slider { background-color: var(--clr-admin); }
+
+.del-btn {
+    background: rgba(231, 76, 60, 0.1); color: #e74c3c; border: 1px solid #e74c3c;
+    width: 35px; height: 35px; border-radius: 10px; cursor: pointer; font-size: 1rem;
+    transition: 0.2s;
+}
+.del-btn:hover { background: #e74c3c; color: white; }
+
+/* Modal & Tabs */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 999; }
+.modal-card { background: var(--bg-surface); padding: 25px; border-radius: 25px; width: 90%; max-width: 400px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 0.8rem; color: var(--clr-admin); margin-bottom: 5px; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px; background: var(--bg-dark); border: 1px solid var(--clr-border);
+    color: white; border-radius: 10px; outline: none;
+}
+
+.upload-mode-tabs { display: flex; background: var(--bg-dark); padding: 5px; border-radius: 12px; margin-bottom: 15px; }
+.mode-tab { flex: 1; padding: 10px; border: none; background: transparent; color: #888; cursor: pointer; border-radius: 8px; font-weight: bold; }
+.mode-tab.active { background: var(--clr-admin); color: white; }
+
+#file-preview-container .p-img { width: 100%; max-height: 120px; object-fit: cover; border-radius: 10px; margin-top: 10px; }
+
+/* PC Grid Adjustment */
+@media (min-width: 768px) {
+    .management-grid { grid-template-columns: 1fr 1fr; }
+}

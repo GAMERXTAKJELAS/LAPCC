@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders - Laptop Companion</title>
+    <link rel="stylesheet" href="reminders.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="pc-header">
+        <a href="settings.html" class="back-link">
+            <div class="back-icon-shape"></div>
+        </a>
+        <h1>REMINDERS</h1>
+    </header>
+
+    <main class="pc-container">
+        <div class="add-section">
+            <button id="addNewReminder" class="circle-add-btn">+</button>
+        </div>
+
+        <div id="reminderList" class="reminder-stack">
+            </div>
+    </main>
+
+    <script src="reminders.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Laptop Companion</title>
+    <link rel="stylesheet" href="settings.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="responsive-container">
+        <header class="settings-header">
+            <a href="profile.html" class="back-btn">
+                <svg viewBox="0 0 24 24" class="green-arrow"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </a>
+            <h1>SETTING</h1>
+        </header>
+
+        <section class="settings-section">
+            <p class="label">General</p>
+            <div class="settings-grid">
+                <div class="card">
+                    <div class="info"><h3>Darkmode</h3><p>Change the theme app</p></div>
+                    <label class="custom-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="card">
+                    <div class="info"><h3>Offline mode</h3><p>Access offline mode app</p></div>
+                    <label class="custom-switch">
+                        <input type="checkbox" id="offline-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="settings-section">
+            <p class="label">More</p>
+            <div class="settings-grid">
+                <div class="card">
+                    <div class="info"><h3>Rating</h3><p>Give us rating</p></div>
+                    <div class="star-rating">
+                        <span class="star" data-value="5">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="1">★</span>
+                    </div>
+                </div>
+                
+                <div class="card clickable-wrapper">
+                    <a href="reminders.html" class="info-link">
+                        <div class="info">
+                            <h3>Reminder</h3>
+                            <p>Customize your reminder here!</p>
+                        </div>
+                    </a>
+                    <label class="custom-switch">
+                        <input type="checkbox" id="all-notifications-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <a href="donation.php" class="card clickable">
+                    <div class="info"><h3>Support us with coffee</h3><p>you can support us with coffee</p></div>
+                    <span class="coffee-icon">☕</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="bottom-links-container">
+            <a href="troubleshoot.html" class="link-box troubleshoot">
+                <h3>Troubleshoot</h3>
+                <p>Check your device now!</p>
+            </a>
+            <a href="community.html" class="link-box community">
+                <h3>Join the community</h3>
+                <p>Lets join us for many tips</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

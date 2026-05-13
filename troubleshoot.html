@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshoot - Laptop Companion</title>
+    <link rel="stylesheet" href="troubleshoot.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="pc-header">
+        <a href="settings.html" class="back-link">
+            <div class="back-icon-shape"></div>
+        </a>
+        <h1>TROUBLESHOOT</h1>
+    </header>
+
+    <main class="responsive-container">
+        <form id="troubleshootForm">
+            <div class="questions-grid" id="questionsContainer">
+                </div>
+            
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">SUBMIT DIAGNOSIS</button>
+            </div>
+        </form>
+
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <h2 id="resultTitle">Health Score: 0</h2>
+                <p id="resultDesc"></p>
+                <button onclick="closeModal()" class="close-btn">RETRY</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="troubleshoot.js"></script>
+</body>
+</html>

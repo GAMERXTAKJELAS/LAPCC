@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us - Laptop Companion</title>
+    <link rel="stylesheet" href="rate.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="pc-header">
+        <a href="settings.html" class="back-link">
+            <div class="back-icon-shape"></div>
+        </a>
+        <h1>RATE US</h1>
+    </header>
+
+    <main class="responsive-container">
+        <form id="ratingForm">
+            <div class="rating-grid">
+                <div class="rate-card">
+                    <h3>User Interface</h3>
+                    <p>How do you like the design and colors?</p>
+                    <div class="star-group" data-category="ui">
+                        <span class="big-star" data-value="5">★</span>
+                        <span class="big-star" data-value="4">★</span>
+                        <span class="big-star" data-value="3">★</span>
+                        <span class="big-star" data-value="2">★</span>
+                        <span class="big-star" data-value="1">★</span>
+                    </div>
+                </div>
+
+                <div class="rate-card">
+                    <h3>Performance</h3>
+                    <p>Is the app fast and responsive?</p>
+                    <div class="star-group" data-category="perf">
+                        <span class="big-star" data-value="5">★</span>
+                        <span class="big-star" data-value="4">★</span>
+                        <span class="big-star" data-value="3">★</span>
+                        <span class="big-star" data-value="2">★</span>
+                        <span class="big-star" data-value="1">★</span>
+                    </div>
+                </div>
+
+                <div class="rate-card">
+                    <h3>Features</h3>
+                    <p>Are the tools helpful for your laptop?</p>
+                    <div class="star-group" data-category="feat">
+                        <span class="big-star" data-value="5">★</span>
+                        <span class="big-star" data-value="4">★</span>
+                        <span class="big-star" data-value="3">★</span>
+                        <span class="big-star" data-value="2">★</span>
+                        <span class="big-star" data-value="1">★</span>
+                    </div>
+                </div>
+
+                <div class="rate-card">
+                    <h3>Overall</h3>
+                    <p>Your general experience with the app.</p>
+                    <div class="star-group" data-category="overall">
+                        <span class="big-star" data-value="5">★</span>
+                        <span class="big-star" data-value="4">★</span>
+                        <span class="big-star" data-value="3">★</span>
+                        <span class="big-star" data-value="2">★</span>
+                        <span class="big-star" data-value="1">★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">SUBMIT REVIEW</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="rate.js"></script>
+</body>
+</html>

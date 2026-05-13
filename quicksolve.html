@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksolve - Laptop Companion</title>
+    
+    <link rel="stylesheet" href="quicksolve.css">
+    <link rel="stylesheet" href="nav.css">
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.classList.add(savedTheme + '-theme');
+        })();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item active">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item">
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="phone-container">
+        <header class="quicksolve-header">
+            <div class="header-pill">QUICKSOLVE</div>
+        </header>
+
+        <main class="shorts-container" id="video-feed">
+            </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="laptopcare.html" class="nav-btn active">
+                    <span class="icon-black">💡</span>
+                </a>
+                <a href="homepage.html" class="nav-btn">
+                    <div class="home-circle">
+                        <span class="icon-black">🏠</span>
+                    </div>
+                </a>
+                <a href="profile.html" class="nav-btn">
+                    <span class="icon-black">👤</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="quicksolve.js"></script>
+</body>
+</html>

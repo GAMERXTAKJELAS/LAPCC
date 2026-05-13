@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Laptop Companion</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="editprofile.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item">
+                <span class="icon-black">🏠</span><span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item">
+                <span class="icon-black">💡</span><span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item active">
+                <span class="icon-black">👤</span><span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="app-shell">
+        <header class="edit-header">
+            <a href="profile.html" class="back-arrow">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#169434" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </a>
+            <h1 class="page-title">EDIT PROFILE</h1>
+            <div style="width:35px"></div> </header>
+
+        <div class="main-container">
+            <main class="edit-content">
+                <div class="edit-card">
+                    <div class="avatar-wrapper" id="trigger-upload">
+                        <div class="avatar-circle">
+                            <img src="https://i.pravatar.cc/150?u=syamsul" alt="User" id="edit-preview">
+                            <div class="avatar-overlay">
+                                <span class="camera-icon">📷</span>
+                                <span class="overlay-text">CHANGE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="edit-form">
+                        <div class="input-group">
+                            <label class="field-label">FULL NAME</label>
+                            <input type="text" id="input-name" placeholder="Muhammad Syamsul Nazir" class="pill-input">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label class="field-label">BIRTH DATE</label>
+                            <input type="date" id="input-dob" class="pill-input">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label class="field-label">GENDER</label>
+                            <select id="input-gender" class="pill-input select-input">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="button" class="save-btn" id="save-profile">SAVE CHANGES</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+        <input type="file" id="profile-upload" hidden accept="image/*">
+
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="laptopcare.html" class="nav-btn"><span class="icon-black">💡</span></a>
+                <a href="homepage.html" class="nav-btn"><span class="icon-black">🏠</span></a>
+                <a href="profile.html" class="nav-btn">
+                    <div class="home-circle"><span class="icon-black">👤</span></div>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="editprofile.js"></script>
+</body>
+</html>

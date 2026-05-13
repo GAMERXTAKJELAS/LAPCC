@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Hub - Laptop Companion</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    (function() {
+        const currentUser = localStorage.getItem('currentUser');
+        const role = localStorage.getItem(currentUser + '_role');
+        
+        if (role !== 'admin') {
+            alert("Access Denied: Admin Privileges Required.");
+            window.location.href = "homepage.html";
+        }
+    })();
+    </script>
+</head>
+<body class="admin-page">
+
+    <div class="admin-wrapper">
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>ADMIN HUB</h1>
+                <p>Manage LAPCC Content</p>
+            </div>
+            <div class="header-right">
+                <a href="profile.html" class="switch-btn">User Panel</a>
+            </div>
+        </header>
+
+<main class="management-grid">
+    <!-- Changed from User Management to Computer Upload -->
+    <a href="computer.html" class="manage-card" id="computer-upload-trigger">
+        <div class="card-icon">💻</div>
+        <div class="card-info">
+            <h3>Computer Upload</h3>
+            <p>Update hardware specs and system details</p>
+        </div>
+    </a>
+
+    <a href="tip.html" class="manage-card">
+        <div class="card-icon">💡</div>
+        <div class="card-info">
+            <h3>Tip Section</h3>
+            <p>Upload Image/Video tips & captions</p>
+        </div>
+    </a>
+
+    <a href="shortvt.html" class="manage-card">
+        <div class="card-icon">🎥</div>
+        <div class="card-info">
+            <h3>Video Section</h3>
+            <p>Upload video guides & captions</p>
+        </div>
+    </a>
+</main>
+
+        <section id="user-dashboard" style="margin-top: 50px;">
+            <h2 style="color: var(--clr-accent); margin-bottom: 20px; border-left: 4px solid var(--clr-admin); padding-left: 15px;">Registered Accounts</h2>
+            <div class="table-container">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email Address</th>
+                            <th>Role</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list">
+                        <!-- User data will appear here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

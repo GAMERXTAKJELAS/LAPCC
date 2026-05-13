@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksolve Manager - LAPCC</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="tip_admin.css">
+    <link rel="stylesheet" href="shortvt.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="admin-page">
+    <div class="admin-wrapper">
+        <header class="admin-header">
+            <div class="header-left">
+                <a href="admin.html" class="back-link">⬅ Back</a>
+                <h1>QUICKSOLVE MANAGER</h1>
+            </div>
+            <button id="open-upload-modal" class="add-btn-circle" title="Add New Video">+</button>
+        </header>
+
+        <main class="content-container">
+            <section class="management-box">
+                <div class="box-header">
+                    <h3>Engagement Analysis</h3>
+                    <p class="subtitle">Monitor likes and shares to see what's trending</p>
+                </div>
+                <div id="video-list-admin" class="video-grid-admin">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="upload-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>New Quicksolve Video</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Caption</label>
+                    <input type="text" id="vid-caption" placeholder="e.g. Fixing Blue Screen...">
+                </div>
+
+                <div class="upload-mode-tabs">
+                    <button class="mode-tab active" data-mode="file">Local File</button>
+                    <button class="mode-tab" data-mode="link">YouTube Link</button>
+                </div>
+
+                <div id="file-section" class="mode-content">
+                    <input type="file" id="vid-file" accept="video/*">
+                </div>
+
+                <div id="link-section" class="mode-content" style="display:none;">
+                    <input type="url" id="vid-url" placeholder="https://youtube.com/shorts/...">
+                </div>
+
+                <div class="form-group">
+                    <label>Orientation</label>
+                    <select id="vid-orientation">
+                        <option value="true">Vertical (9:16)</option>
+                        <option value="false">Horizontal (16:9)</option>
+                    </select>
+                </div>
+
+                <button id="btn-save-video" class="publish-btn">PUBLISH VIDEO</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shortvt.js"></script>
+</body>
+</html>

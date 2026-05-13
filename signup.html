@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Laptop Companion</title>
+    <link rel="stylesheet" href="style.css"> <!-- Theme Variables -->
+    <link rel="stylesheet" href="nav.css">   <!-- Shared Nav Component -->
+    <link rel="stylesheet" href="signup.css"> <!-- Page Specific UI -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="dark-mode">
+
+    <!-- SYNCED SIDEBAR -->
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="index.html" class="side-item">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <div class="side-item">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </div>
+            <a href="signin.html" class="side-item active"> <!-- PROFILE ACTIVE -->
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="page-wrapper">
+        <header>
+            <div class="title-tab">
+                <h1>LAPTOP COMPANION</h1>
+                <h2 class="sub-title">CREATE ACCOUNT</h2>
+            </div>
+        </header>
+
+        <main class="signup-container">
+            <div class="form-card">
+                <form id="signup-form">
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <input type="text" id="reg-name" placeholder="NAME" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="reg-username" placeholder="USERNAME" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="reg-email" placeholder="EMAIL" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="reg-dob" placeholder="BIRTH DATE" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="reg-gender" placeholder="GENDER">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="reg-password" placeholder="PASSWORD" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" id="reg-confirm" placeholder="CONFIRM PASSWORD" required>
+                        </div>
+                    </div>
+
+                    <div class="signup-actions">
+                        <button type="submit" class="btn-green-submit">SIGN UP</button>
+                        <a href="signin.html" class="btn-green-alt">ALREADY HAVE AN ACCOUNT?</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- SYNCED MOBILE NAV -->
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="#" class="nav-btn">
+                    <span class="icon-black">💡</span>
+                </a>
+                <a href="index.html" class="nav-btn">
+                    <span class="icon-black">🏠</span>
+                </a>
+                <a href="signin.html" class="nav-btn active">
+                    <div class="home-circle">
+                        <span class="icon-black">👤</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

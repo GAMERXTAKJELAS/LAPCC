@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Info - Laptop Companion</title>
+    <link rel="stylesheet" href="laptop-info.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item">
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="page-wrapper">
+        <header>
+            <div class="title-tab">
+                <h1>LAPTOP COMPANION</h1>
+                <h2 class="sub-title">INFO</h2>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="redirect-bar">
+                <div class="laptop-meta">
+                    <span class="comp-name">COMPUTER A</span> 
+                    <span class="comp-desc">Best computer ever</span>
+                </div>
+                <a href="https://www.lenovo.com/my/en/p/laptops/legion-laptops/legion-5-series/legion-5a-gen-11-15-inch-amd/83q7cto1wwmy2" target="_blank" class="btn-check">Check it!</a>
+            </div>
+
+            <div class="main-info-grid">
+                <section class="info-gallery">
+                    <div class="gallery-item item-square">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600" alt="Laptop Square">
+                    </div>
+                    <div class="gallery-item item-wide">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600" alt="Laptop Wide">
+                    </div>
+                </section>
+
+                <section class="description-card">
+                    <p>This section provides a detailed breakdown of your laptop's performance and maintenance needs. Stay informed to keep your device running like new.</p>
+                </section>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-container">
+                <a href="laptopcare.html" class="nav-btn"><span class="icon-black">💡</span></a>
+                <a href="homepage.html" class="nav-btn">
+                    <div class="home-circle"><span class="icon-black">🏠</span></div>
+                </a>
+                <a href="profile.html" class="nav-btn"><span class="icon-black">👤</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

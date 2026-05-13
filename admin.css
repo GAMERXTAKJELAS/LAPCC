@@ -1,0 +1,61 @@
+:root {
+    --clr-admin: #169434;
+    --clr-accent: #f39c12;
+    --bg-dark: #121212;
+    --bg-surface: #1e1e1e;
+    --clr-text: #ffffff;
+    --clr-border: #333333;
+}
+
+body { background: var(--bg-dark); color: var(--clr-text); font-family: 'Segoe UI', sans-serif; margin: 0; }
+.admin-wrapper { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+
+.admin-header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--clr-admin); 
+}
+
+.admin-header h1 { color: var(--clr-accent); letter-spacing: 2px; }
+
+.management-grid { display: flex; flex-direction: column; gap: 20px; }
+
+.manage-card {
+    background: var(--bg-surface); display: flex; align-items: center; 
+    padding: 25px; border-radius: 20px; text-decoration: none; color: white;
+    border: 1px solid var(--clr-border); transition: 0.3s; cursor: pointer;
+}
+
+.manage-card:hover { border-color: var(--clr-admin); transform: translateY(-3px); }
+.card-icon { font-size: 2.5rem; margin-right: 25px; }
+
+/* Table Styles */
+.table-container { background: var(--bg-surface); border-radius: 20px; padding: 20px; border: 1px solid var(--clr-border); }
+.user-table { width: 100%; border-collapse: collapse; text-align: left; }
+.user-table th { padding: 15px; color: var(--clr-admin); border-bottom: 2px solid var(--clr-border); }
+.user-table td { padding: 15px; border-bottom: 1px solid var(--clr-border); }
+
+/* Tooltip Logic */
+.user-info-wrapper { position: relative; display: inline-block; cursor: help; }
+.user-tooltip {
+    visibility: hidden; width: 250px; background-color: #2c3e50; color: #fff;
+    border-radius: 12px; padding: 15px; position: absolute; z-index: 100;
+    bottom: 125%; left: 50%; margin-left: -125px; opacity: 0;
+    transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid var(--clr-admin);
+}
+.user-info-wrapper:hover .user-tooltip { visibility: visible; opacity: 1; }
+
+.tooltip-line { font-size: 0.85rem; margin-bottom: 6px; display: block; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; }
+.tooltip-label { color: var(--clr-accent); font-weight: bold; margin-right: 5px; }
+
+.delete-btn {
+    background: #e74c3c; color: white; border: none; padding: 8px 15px; 
+    border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s;
+}
+.delete-btn:hover { background: #c0392b; transform: scale(1.05); }
+
+.switch-btn { 
+    text-decoration: none; color: var(--clr-text); border: 1.5px solid var(--clr-border);
+    padding: 10px 25px; border-radius: 50px; font-weight: bold; transition: 0.3s;
+}
+.switch-btn:hover { background: var(--clr-text); color: var(--bg-dark); }

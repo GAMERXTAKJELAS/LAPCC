@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPCC - Tech Manager</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="computer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="dark-theme">
+
+    <header class="app-header">
+        <!-- Direct back button to Admin Hub -->
+        <button class="back-btn" onclick="window.location.href='admin.html'">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="header-titles">
+            <h1>Tech Manager</h1>
+            <p>Upload & Edit Hardware Guides</p>
+        </div>
+    </header>
+
+    <main class="content-area">
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="tech-search" placeholder="Search saved hardware...">
+        </div>
+
+        <div class="tech-list" id="tech-grid">
+            <!-- Items injected by computer.js -->
+        </div>
+    </main>
+
+    <!-- The Floating Add Button -->
+    <button class="fab-add" id="open-modal">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <!-- Modal remains the same structure -->
+    <div class="modal-overlay" id="upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Component</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="tech-form">
+                <div class="form-row upload-box">
+                    <label for="up-file" class="file-label">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>Click to Upload Image</span>
+                    </label>
+                    <input type="file" id="up-file" accept="image/*" style="display:none;">
+                    <img id="img-preview" src="" style="display:none; width: 100%; border-radius: 12px; margin-top: 10px;">
+                </div>
+                <div class="form-row">
+                    <input type="text" id="up-title" placeholder="Component Name (e.g. LAPCC-01)" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="up-short" placeholder="Short Summary (Max 10 words)" required>
+                </div>
+                <div class="form-row">
+                    <textarea id="up-long" rows="4" placeholder="Detailed Maintenance & Troubleshooting Info..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <input type="url" id="up-link" placeholder="More Info Link (https://...)">
+                </div>
+                <button type="submit" class="submit-btn">SAVE TO DATABASE</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="computer.js"></script>
+</body>
+</html>

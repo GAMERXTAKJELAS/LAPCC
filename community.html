@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Laptop Companion</title>
+    <link rel="stylesheet" href="community.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('app-theme') || 'dark';
+            document.documentElement.className = savedTheme + '-theme';
+        })();
+    </script>
+</head>
+<body>
+
+    <aside class="sidebar-pc">
+        <nav class="side-links">
+            <a href="homepage.html" class="side-item">
+                <span class="icon-black">🏠</span>
+                <span class="side-text">Home</span>
+            </a>
+            <a href="laptopcare.html" class="side-item">
+                <span class="icon-black">💡</span>
+                <span class="side-text">Laptop Care</span>
+            </a>
+            <a href="profile.html" class="side-item">
+                <span class="icon-black">👤</span>
+                <span class="side-text">Profile</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="community-container">
+        <header class="community-header">
+            <a href="settings.html" class="back-btn">
+                <svg viewBox="0 0 24 24" class="green-arrow"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </a>
+            <h1>COMMUNITY</h1>
+        </header>
+
+        <main class="community-feed">
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                    </div>
+                    <h2 class="post-title">Thermal Paste Tips?</h2>
+                </div>
+                <p class="post-content">Does anyone have recommendations for the best thermal paste for a gaming laptop? My temps are hitting 90°C lately...</p>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                    </div>
+                    <h2 class="post-title">Cleaning My Fans</h2>
+                </div>
+                <p class="post-content">Just finished cleaning the dust out of my laptop fans. The "Laptop Care" guides here really helped! It's much quieter now.</p>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <div class="user-avatar">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="User">
+                    </div>
+                    <h2 class="post-title">SSD Upgrade</h2>
+                </div>
+                <p class="post-content">Planning to upgrade to a 1TB NVMe SSD. Does the LAPCC guide cover cloning the OS or should I do a fresh install?</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

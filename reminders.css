@@ -1,0 +1,129 @@
+:root {
+    --bg-black: #0f0f0f;
+    --header-gray: #1a1a1a;
+    --card-gray: #212121;
+    --app-green: #67cc8a;
+    --text-gray: #888;
+    --text-main: #ffffff; /* Added for light mode support */
+}
+
+/* LIGHT MODE THEME OVERRIDES */
+.light-theme {
+    --bg-black: #f5f5f5;
+    --header-gray: #ffffff;
+    --card-gray: #ffffff;
+    --text-gray: #666;
+    --text-main: #121212;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.pc-header {
+    background-color: var(--header-gray);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.back-icon-shape {
+    width: 20px; height: 20px;
+    border-left: 5px solid var(--app-green);
+    border-bottom: 5px solid var(--app-green);
+    transform: rotate(45deg);
+    position: absolute; left: 40px; top: 25px;
+}
+
+.pc-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+.add-section { display: flex; justify-content: center; margin-bottom: 30px; }
+.circle-add-btn {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: transparent; border: 2px solid #333;
+    color: #444; font-size: 24px; cursor: pointer;
+}
+
+/* REMINDER CARD & ACCORDION */
+.reminder-card {
+    background-color: var(--card-gray);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+.bell-icon {
+    width: 30px; height: 30px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Bell Color is set in JS via SVG fill, but we ensure stroke is visible */
+.bell-icon svg { 
+    stroke: var(--text-main); 
+}
+
+.reminder-title { 
+    flex-grow: 1; 
+    font-size: 1.1rem; 
+    color: var(--text-main);
+}
+
+.delete-circle {
+    width: 26px; height: 26px;
+    border: 2px solid #444; border-radius: 50%;
+    position: relative; cursor: pointer;
+}
+.delete-circle::after {
+    content: ""; width: 12px; height: 2px;
+    background: #444; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+/* EDIT DRAWER */
+.edit-drawer {
+    max-height: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: var(--header-gray); /* Match header for slight contrast */
+}
+
+.reminder-card.open .edit-drawer {
+    max-height: 250px; 
+}
+
+.edit-content {
+    padding: 20px 30px 30px 80px; 
+    display: flex;
+    gap: 40px;
+}
+
+.setting-item { display: flex; flex-direction: column; gap: 8px; }
+.setting-item label { font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; }
+
+.square-box, .time-input {
+    background: var(--bg-black);
+    border: 1px solid #444;
+    color: var(--text-main);
+    padding: 10px;
+    border-radius: 8px;
+    width: 120px;
+    outline: none;
+}

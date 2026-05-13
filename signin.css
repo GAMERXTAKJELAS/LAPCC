@@ -1,0 +1,92 @@
+/* --- PAGE SPECIFIC STYLES --- */
+
+.content-area { 
+    position: relative; 
+    flex: 1; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+/* Glassmorphism Background Blur */
+.profile-preview-blur {
+    position: absolute; 
+    width: 280px; 
+    height: 350px;
+    background: var(--clr-primary-a0); 
+    border-radius: 40px;
+    filter: blur(60px); 
+    opacity: 0.15; 
+    z-index: 1;
+}
+
+.auth-overlay { z-index: 10; width: 100%; max-width: 350px; }
+.button-stack { display: flex; flex-direction: column; gap: 20px; }
+
+/* Buttons Improved */
+.btn-main, .btn-alt, .btn-submit {
+    padding: 20px; 
+    border-radius: 25px; 
+    border: none;
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    cursor: pointer; 
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-main { background: var(--clr-primary-a0); color: white; box-shadow: 0 10px 20px rgba(22, 148, 52, 0.2); }
+.btn-alt { background: var(--clr-surface-a20); color: var(--clr-text); border: 1px solid var(--clr-border); }
+.btn-submit { background: var(--clr-primary-a0); color: white; margin-top: 10px; width: 100%; }
+
+.btn-main:hover, .btn-alt:hover { transform: translateY(-5px) scale(1.02); }
+
+.btn-back { 
+    background: transparent; 
+    color: var(--clr-text); 
+    border: none; 
+    margin-top: 15px; 
+    cursor: pointer; 
+    opacity: 0.6; 
+    width: 100%; 
+    font-weight: bold;
+}
+
+/* Form Card High-End Look */
+.form-card {
+    position: relative; 
+    z-index: 20; 
+    background: var(--clr-surface-a10);
+    padding: 45px 35px; 
+    border-radius: 40px; 
+    border: 1px solid var(--clr-border);
+    width: 100%; 
+    max-width: 400px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.form-title { color: var(--clr-primary-a0); text-align: center; margin-bottom: 30px; letter-spacing: 1px; }
+
+.input-group input {
+    width: 100%; 
+    padding: 18px; 
+    border-radius: 18px; 
+    border: 1px solid var(--clr-border);
+    background: var(--clr-surface-a0); 
+    color: var(--clr-text); 
+    margin-bottom: 15px; 
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus { border-color: var(--clr-primary-a0); }
+
+.hidden { display: none !important; }
+
+/* Desktop Tweaks */
+@media (min-width: 1024px) {
+    .page-wrapper { margin-left: 75px; width: calc(100% - 75px); max-width: none; }
+}

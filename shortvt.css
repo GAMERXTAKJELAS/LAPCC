@@ -1,0 +1,123 @@
+/* shortvt.css */
+:root {
+    --primary: #169434; /* Success Green */
+    --danger: #ff4444;  /* Delete Red */
+    --bg: #000000;      /* Pure black for performance */
+    --card: #111111;    /* Dark grey card */
+    --border: #222222;  /* Subtle border */
+    --text: #ffffff;
+}
+
+body.admin-page {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+}
+
+/* Header */
+.admin-header {
+    padding: 15px 20px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-btn-circle {
+    width: 45px; height: 45px;
+    background: var(--primary);
+    color: white; border: none; border-radius: 8px;
+    font-size: 24px; cursor: pointer;
+}
+
+/* Analysis Section */
+.management-box {
+    padding: 20px;
+}
+
+.box-header h3 { margin: 0; color: var(--primary); }
+.subtitle { color: #666; font-size: 0.8rem; margin-bottom: 20px; }
+
+/* Grid & Cards */
+.video-grid-admin {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.video-item-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.vid-title-admin {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    height: 35px; /* Fixed height for alignment */
+    overflow: hidden;
+}
+
+/* Admin Analysis Boxes */
+.stats-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    flex: 1;
+    background: #000;
+    border: 1px solid var(--border);
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.stat-item span { font-size: 0.65rem; color: #888; display: block; text-transform: uppercase; }
+.stat-item strong { font-size: 1.1rem; color: var(--primary); }
+
+.delete-btn-small {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Simple Modal (No animations) */
+.modal-overlay {
+    display: none; 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 100;
+    align-items: center; justify-content: center;
+}
+
+.modal-content {
+    background: #111;
+    width: 90%; max-width: 350px;
+    padding: 25px;
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+}
+
+input, select {
+    width: 100%; padding: 12px; margin: 10px 0;
+    background: #000; border: 1px solid var(--border);
+    color: white; border-radius: 5px;
+}
+
+.publish-btn {
+    width: 100%; padding: 15px;
+    background: var(--primary); color: white;
+    border: none; border-radius: 5px; font-weight: bold;
+    margin-top: 10px; cursor: pointer;
+}
